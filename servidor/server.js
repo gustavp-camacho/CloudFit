@@ -1,11 +1,11 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('./Backend/config/database');
-const corsOptions = require('./Backend/config/cors');
-const errorHandler = require('./Backend/middleware/errorHandler');
-const authRoutes = require('./Backend/routes/auth');
-const eventRoutes = require('./Backend/routes/events');
+const connectDB = require('./config/database');
+const corsOptions = require('./config/cors');
+const errorHandler = require('./middleware/errorHandler');
+const authRoutes = require('./routes/auth');
+const eventRoutes = require('./routes/events');
 
 // Inicializar la aplicación de Express
 const app = express();
