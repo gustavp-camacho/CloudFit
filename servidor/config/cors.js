@@ -1,5 +1,5 @@
 const corsOptions = {
-  origin: 'http://localhost:3000', // Ajusta esto según tu frontend
+  origin: 'https://main.dowoiz6fy8rk4.amplifyapp.com', // Ajusta esto según tu frontend
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
