@@ -28,7 +28,7 @@ const Login = () => {
     try {
         console.log('Intentando login con:', formData);
 
-        const response = await fetch('https://cloudfitnessgym.com/api/auth/login', {
+        const response = await fetch('http://18.219.156.200:5000/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
