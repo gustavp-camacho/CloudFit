@@ -138,7 +138,7 @@ const MachinesManagement = () => {
     setError('');
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://18.219.156.200:5000/api/maquinas/all', {
+      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/maquinas/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -231,7 +231,7 @@ const MachinesManagement = () => {
           formDataToSend.append('imagen', formData.imagen);
         }
 
-        const response = await fetch(`http://18.219.156.200:5000/api/maquinas/maquina/${editingMachine.machineId}`, {
+        const response = await fetch(`https://b949-18-219-156-200.ngrok-free.app/api/maquinas/maquina/${editingMachine.machineId}`, {
           method: 'PUT',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -275,7 +275,7 @@ const MachinesManagement = () => {
           nombreImagen: formData.nombreImagen
         });
         
-        const response = await fetch('http://18.219.156.200:5000/api/maquinas/create', {
+        const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/maquinas/create', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -341,7 +341,7 @@ const MachinesManagement = () => {
       setError('');
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://18.219.156.200:5000/api/maquinas/maquina/${machineId}`, {
+        const response = await fetch(`https://b949-18-219-156-200.ngrok-free.app/api/maquinas/maquina/${machineId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,

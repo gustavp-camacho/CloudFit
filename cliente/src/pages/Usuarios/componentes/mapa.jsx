@@ -18,7 +18,7 @@ const MapSection = () => {
     setError('');
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://18.219.156.200:5000/api/maquinas/all', {
+      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/maquinas/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -35,8 +35,8 @@ const MapSection = () => {
           type: mapCategoryToType(machine.categoria),
           x: getPositionX(machine.categoria, index), // ← Función para calcular posición
           y: getPositionY(machine.categoria, index), // ← Función para calcular posición
-          image: `http://18.219.156.200:5000/uploads/${machine.nombreImagen}`, // ← URL real
-          video: `http://18.219.156.200:5000/uploads/${machine.nombreVideo}`, // ← URL real
+          image: `https://b949-18-219-156-200.ngrok-free.app/uploads/${machine.nombreImagen}`, // ← URL real
+          video: `https://b949-18-219-156-200.ngrok-free.app/uploads/${machine.nombreVideo}`, // ← URL real
           description: `${machine.nombre} - ${machine.pesos}. Cantidad disponible: ${machine.cantidad}`,
           instructions: getInstructionsByCategory(machine.categoria),
           cantidad: machine.cantidad,

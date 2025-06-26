@@ -64,7 +64,7 @@ const RoutineManagement = () => {
   const fetchMachines = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://18.219.156.200:5000/api/maquinas/all', {
+      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/maquinas/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ const RoutineManagement = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch('http://18.219.156.200:5000/api/rutinas/all', {
+      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/rutinas/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -117,7 +117,7 @@ const RoutineManagement = () => {
       setSuccess('');
       
       const token = localStorage.getItem('token');
-      const response = await fetch('http://18.219.156.200:5000/api/rutinas/save-all', {
+      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/rutinas/save-all', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
