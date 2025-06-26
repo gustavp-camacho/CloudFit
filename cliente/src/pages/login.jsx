@@ -28,7 +28,7 @@ const Login = () => {
     try {
         console.log('Intentando login con:', formData);
 
-        const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/auth/login', {
+        const response = await fetch('https://api.cloudfitnessgym.com/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

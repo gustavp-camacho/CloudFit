@@ -89,7 +89,7 @@ const EmployeesManagement = () => {
     setError('');
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/empleados/all', {
+      const response = await fetch('https://api.cloudfitnessgym.com/api/empleados/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -195,7 +195,7 @@ const EmployeesManagement = () => {
       
       if (editingEmployee) {
         // Actualizar empleado existente
-        url = `https://b949-18-219-156-200.ngrok-free.app/api/empleados/empleado/${editingEmployee.employeeId}`;
+        url = `https://api.cloudfitnessgym.com/api/empleados/empleado/${editingEmployee.employeeId}`;
         method = 'PUT';
         bodyData = { ...formData };
         // Si no hay nueva contraseña, no la enviamos
@@ -204,7 +204,7 @@ const EmployeesManagement = () => {
         }
       } else {
         // Crear nuevo empleado
-        url = 'hhttps://b949-18-219-156-200.ngrok-free.app/api/empleados/create';
+        url = 'https://api.cloudfitnessgym.com/api/empleados/create';
         method = 'POST';
         const newEmployeeId = generateEmployeeId();
         bodyData = {
@@ -281,7 +281,7 @@ const EmployeesManagement = () => {
       setError('');
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`https://b949-18-219-156-200.ngrok-free.app0/api/empleados/empleado/${employeeId}`, {
+        const response = await fetch(`https://api.cloudfitnessgym.com/api/empleados/empleado/${employeeId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,

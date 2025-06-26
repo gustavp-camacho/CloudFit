@@ -18,7 +18,7 @@ const MapSection = () => {
     setError('');
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/maquinas/all', {
+      const response = await fetch('https://api.cloudfitnessgym.com/api/maquinas/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -35,8 +35,8 @@ const MapSection = () => {
           type: mapCategoryToType(machine.categoria),
           x: getPositionX(machine.categoria, index), // ← Función para calcular posición
           y: getPositionY(machine.categoria, index), // ← Función para calcular posición
-          image: `https://b949-18-219-156-200.ngrok-free.app/uploads/${machine.nombreImagen}`, // ← URL real
-          video: `https://b949-18-219-156-200.ngrok-free.app/uploads/${machine.nombreVideo}`, // ← URL real
+          image: `https://api.cloudfitnessgym.com/uploads/${machine.nombreImagen}`, // ← URL real
+          video: `https://api.cloudfitnessgym.com/uploads/${machine.nombreVideo}`, // ← URL real
           description: `${machine.nombre} - ${machine.pesos}. Cantidad disponible: ${machine.cantidad}`,
           instructions: getInstructionsByCategory(machine.categoria),
           cantidad: machine.cantidad,

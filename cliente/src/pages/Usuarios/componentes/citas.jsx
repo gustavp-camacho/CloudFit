@@ -53,7 +53,7 @@ const AppointmentBooking = () => {
   const fetchEmployees = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/empleados/all', {
+      const response = await fetch('https://api.cloudfitnessgym.com/api/empleados/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -99,7 +99,7 @@ const AppointmentBooking = () => {
   const fetchAppointments = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/citas/my-appointments', {
+      const response = await fetch('https://api.cloudfitnessgym.com/api/citas/my-appointments', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ const AppointmentBooking = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `https://b949-18-219-156-200.ngrok-free.app/api/citas/employee/${selectedEmployee}/busy-slots?date=${selectedDate}`,
+        `https://api.cloudfitnessgym.com/api/citas/employee/${selectedEmployee}/busy-slots?date=${selectedDate}`,
         {
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -234,7 +234,7 @@ const AppointmentBooking = () => {
       console.log('Enviando datos de la cita:', appointmentData); // Para debug
 
       const token = localStorage.getItem('token');
-      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/citas/book', {
+      const response = await fetch('https://api.cloudfitnessgym.com/api/citas/book', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -278,7 +278,7 @@ const AppointmentBooking = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch(`https://b949-18-219-156-200.ngrok-free.app/api/citas/appointment/${appointmentId}/cancel`, {
+      const response = await fetch(`https://api.cloudfitnessgym.com/api/citas/appointment/${appointmentId}/cancel`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

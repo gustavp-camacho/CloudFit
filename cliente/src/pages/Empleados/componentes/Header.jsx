@@ -18,7 +18,7 @@ const Header = () => {
   const fetchEmployeeProfile = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/empleados/profile', {
+      const response = await fetch('https://api.cloudfitnessgym.com/api/empleados/profile', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

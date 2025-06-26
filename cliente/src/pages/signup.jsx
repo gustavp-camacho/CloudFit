@@ -267,7 +267,7 @@ const Signup = () => {
     try {
       const newUserId = generateUserId();
       
-      const response = await fetch('hhttps://b949-18-219-156-200.ngrok-free.app/api/auth/signup', {
+      const response = await fetch('https://api.cloudfitnessgym.com/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

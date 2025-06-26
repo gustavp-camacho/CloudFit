@@ -16,7 +16,7 @@ const Schedule = () => {
       const dateStr = selectedDate.toISOString().split('T')[0]; // YYYY-MM-DD
       
       // URL CORREGIDA: Cambiada de /api/empleados/appointments a /api/citas/employee-schedule
-      const response = await fetch(`http://18.219.156.200:5000/api/citas/employee-schedule?date=${dateStr}`, {
+      const response = await fetch(`https://api.cloudfitnessgym.com/api/citas/employee-schedule?date=${dateStr}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

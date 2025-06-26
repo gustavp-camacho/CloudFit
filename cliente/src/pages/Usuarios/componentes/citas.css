@@ -110,7 +110,7 @@
 }
 
 .service-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #1862ac 0%, #f1f5f9 100%);
   border: 2px solid #e2e8f0;
   border-radius: 20px;
   padding: 24px;
@@ -178,7 +178,7 @@
 }
 
 .employee-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #072e55 0%, #f1f5f9 100%);
   border: 2px solid #e2e8f0;
   border-radius: 18px;
   padding: 20px;

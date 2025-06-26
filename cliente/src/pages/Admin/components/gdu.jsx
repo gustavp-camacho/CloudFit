@@ -36,7 +36,7 @@ const UsersManagement = () => {
       const token = localStorage.getItem('token');
       console.log('Obteniendo usuarios...');
 
-      const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/users', {
+      const response = await fetch('http://localhost:5000/api/users', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ const UsersManagement = () => {
       const token = localStorage.getItem('token');
       console.log('Actualizando usuario:', selectedUser.id, editForm);
 
-      const response = await fetch(`https://b949-18-219-156-200.ngrok-free.app/api/users/${selectedUser.id}`, {
+      const response = await fetch(`http://localhost:5000/api/users/${selectedUser.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ const UsersManagement = () => {
       const token = localStorage.getItem('token');
       console.log('Eliminando usuario:', selectedUser.id);
 
-      const response = await fetch(`https://b949-18-219-156-200.ngrok-free.app/api/users/${selectedUser.id}`, {
+      const response = await fetch(`http://localhost:5000/api/users/${selectedUser.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
