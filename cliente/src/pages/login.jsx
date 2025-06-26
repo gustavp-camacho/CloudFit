@@ -28,7 +28,7 @@ const Login = () => {
     try {
         console.log('Intentando login con:', formData);
 
-        const response = await fetch('https://b949-18-219-156-200.ngrok-free.app0/api/auth/login', {
+        const response = await fetch('https://b949-18-219-156-200.ngrok-free.app/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
