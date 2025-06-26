@@ -1,0 +1,136 @@
+/* EmpleadoMenu.css - Layout principal para empleados */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.empleado-menu {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Content Area */
+.empleado-main {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* Footer */
+.empleado-footer {
+  background: rgba(44, 62, 80, 0.8);
+  border-top: 1px solid rgba(125, 211, 192, 0.3);
+  padding: 15px 20px;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: #7dd3c0;
+  font-weight: 500;
+}
+
+.footer-version {
+  font-size: 10px;
+  color: rgba(125, 211, 192, 0.7);
+  font-weight: 400;
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 350px) {
+  .empleado-footer {
+    padding: 12px 15px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .footer-text {
+    font-size: 11px;
+  }
+  
+  .footer-version {
+    font-size: 9px;
+  }
+}
+
+/* Responsive para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .empleado-main {
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  
+  .empleado-footer {
+    padding: 20px 30px;
+  }
+  
+  .footer-text {
+    font-size: 13px;
+  }
+  
+  .footer-version {
+    font-size: 11px;
+  }
+}
+
+/* Para pantallas grandes (desktop) */
+@media (min-width: 1025px) {
+  .empleado-main {
+    max-width: 600px;
+    padding: 0 30px;
+  }
+  
+  .empleado-footer {
+    padding: 25px 40px;
+  }
+  
+  .footer-text {
+    font-size: 14px;
+  }
+  
+  .footer-version {
+    font-size: 12px;
+  }
+}
+
+/* Animaciones suaves */
+.empleado-menu * {
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar personalizado para webkit browsers */
+.empleado-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.empleado-main::-webkit-scrollbar-track {
+  background: rgba(44, 62, 80, 0.3);
+}
+
+.empleado-main::-webkit-scrollbar-thumb {
+  background: rgba(125, 211, 192, 0.5);
+  border-radius: 3px;
+}
+
+.empleado-main::-webkit-scrollbar-thumb:hover {
+  background: rgba(125, 211, 192, 0.7);
+}

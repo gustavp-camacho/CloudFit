@@ -1,0 +1,215 @@
+/* CSS del header existente */
+.header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+  pointer-events: none;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.gym-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  /*box-shadow: 0 2px 10px rgba(52, 152, 219, 0.3); */
+}
+
+.gym-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ecf0f1;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: rgba(44, 62, 80, 0.8);
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.user-info:hover {
+  background: rgba(52, 152, 219, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.username {
+  font-weight: 600;
+  color: #ecf0f1;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(46, 204, 113, 0.3);
+  transition: all 0.3s ease;
+}
+
+.user-avatar:hover {
+  box-shadow: 0 2px 12px rgba(52, 152, 219, 0.4);
+}
+
+/* Menú desplegable con portal */
+.user-menu-portal {
+  pointer-events: auto;
+}
+
+.user-menu {
+  width: 150px;
+  background: rgba(44, 62, 80, 0.98);
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(52, 152, 219, 0.4);
+  animation: menuSlideIn 0.2s ease-out;
+  overflow: hidden;
+  padding: 8px;
+}
+
+@keyframes menuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  border-radius: 6px;
+}
+
+.logout-btn:hover {
+  background: rgba(231, 76, 60, 0.2);
+  color: #ff6b6b;
+  border-color: rgba(231, 76, 60, 0.5);
+}
+
+.logout-icon {
+  font-size: 14px;
+}
+
+/* Efecto adicional para el logo */
+.logo-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .gym-name {
+    font-size: 20px;
+  }
+  
+  .username {
+    font-size: 14px;
+  }
+  
+  .user-avatar, .logo-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .user-info {
+    padding: 8px 14px;
+  }
+
+  .user-menu {
+    width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+  }
+  
+  .gym-logo {
+    gap: 10px;
+  }
+  
+  .gym-name {
+    font-size: 18px;
+  }
+  
+  .user-info {
+    gap: 8px;
+    padding: 6px 12px;
+  }
+
+  .user-menu {
+    width: 120px;
+  }
+
+  .logout-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}

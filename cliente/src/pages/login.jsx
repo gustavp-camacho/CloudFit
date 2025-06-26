@@ -1,3 +1,4 @@
+//login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
@@ -61,16 +62,14 @@ const Login = () => {
                 user: JSON.parse(localStorage.getItem('user'))
             });
             
-            // Redirección basada en el rol
-        if (userData.role === 'admin') {
-          navigate('/Admin');
-        } else if (userData.role === 'user') {
-          navigate('/menu');
-        } else {
-          // Ruta por defecto si no hay rol específico
-          navigate('/menu');
-        
-        }
+           // Redirección basada en el rol (ACTUALIZADA PARA EMPLEADOS)
+            if (userData.role === 'admin') {
+                navigate('/Admin');
+            } else if (userData.role === 'user') {
+                navigate('/menu');
+            } else if (userData.role === 'empleado') {
+                navigate('/Empleado'); // Nueva ruta para empleados
+            } 
             
         } else {
             setError(data.message || 'Error en la autenticación');
@@ -86,9 +85,9 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="user-icon">
-              <img src="logo.png" alt="Icono Usuario" />
+              <img src="cloudfit_l.png" alt="Icono Usuario" />
             </div>
-      <p>Bienvenido a la casa del mejor equipo de Beisbol del país</p>
+      <p>¡Empieza en la nube!</p>
       
       <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="email">Correo Electrónico</label>

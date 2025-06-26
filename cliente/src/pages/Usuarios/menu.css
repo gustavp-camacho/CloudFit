@@ -1,0 +1,21 @@
+.user-dashboard {
+  min-height: 100vh;
+  background: #374151;
+  color: #f9fafb;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-content {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 16px;
+    min-height: calc(100vh - 180px);
+  }
+}

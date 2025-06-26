@@ -1,0 +1,264 @@
+/* Header.css - Inspirado en el diseño del login de CloudFit */
+
+/* Variables */
+:root {
+  --cloudfit-green: #7dd3c0;
+  --cloudfit-dark: #2c3e50;
+  --cloudfit-light: #ecf0f1;
+  --cloudfit-white: #ffffff;
+  --cloudfit-shadow: 0 2px 10px rgba(44, 62, 80, 0.1);
+  --cloudfit-shadow-hover: 0 4px 20px rgba(44, 62, 80, 0.15);
+  --cloudfit-radius: 12px;
+}
+
+/* Header principal */
+.employee-header {
+  background: linear-gradient(135deg, var(--cloudfit-dark) 0%, #34495e 100%);
+  color: var(--cloudfit-white);
+  padding: 16px;
+  box-shadow: var(--cloudfit-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  max-width: 100%;
+}
+
+/* Logo section */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cloudfit-white);
+  letter-spacing: -0.5px;
+}
+
+/* Información del empleado (centro) */
+.header-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.employee-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.employee-greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.greeting-text {
+  font-size: 14px;
+  color: var(--cloudfit-light);
+  font-weight: 400;
+}
+
+.employee-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cloudfit-white);
+  letter-spacing: -0.3px;
+}
+
+.employee-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.position-icon {
+  font-size: 16px;
+}
+
+.position-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Botón de logout */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--cloudfit-white);
+  padding: 10px 16px;
+  border-radius: var(--cloudfit-radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.logout-button:hover {
+  background: rgba(231, 76, 60, 0.9);
+  border-color: #e74c3c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+.logout-icon {
+  font-size: 16px;
+}
+
+.logout-text {
+  font-size: 14px;
+}
+
+/* Loading */
+.header-loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cloudfit-light);
+  justify-content: center;
+  grid-column: 1 / -1;
+  padding: 8px;
+}
+
+.loading-spinner-small {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid var(--cloudfit-white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error message */
+.header-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(231, 76, 60, 0.9);
+  color: var(--cloudfit-white);
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.error-icon {
+  font-size: 16px;
+}
+
+.error-text {
+  font-size: 14px;
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+  .employee-header {
+    padding: 12px;
+  }
+  
+  .header-content {
+    gap: 12px;
+  }
+  
+  .app-name {
+    display: none; /* Ocultar en pantallas muy pequeñas */
+  }
+  
+  .employee-name {
+    font-size: 16px;
+  }
+  
+  .greeting-text {
+    font-size: 12px;
+  }
+  
+  .logout-text {
+    display: none; /* Solo mostrar icono en móviles pequeños */
+  }
+  
+  .logout-button {
+    padding: 10px;
+    min-width: 40px;
+    justify-content: center;
+  }
+}
+
+/* Responsive para móviles medianos */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header-content {
+    gap: 16px;
+  }
+  
+  .employee-info {
+    gap: 6px;
+  }
+}
+
+/* Responsive para tablets y desktop */
+@media (min-width: 769px) {
+  .employee-header {
+    padding: 20px 24px;
+  }
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .employee-name {
+    font-size: 20px;
+  }
+  
+  .app-name {
+    font-size: 20px;
+  }
+}

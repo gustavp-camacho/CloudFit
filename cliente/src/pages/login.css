@@ -1,16 +1,17 @@
 /* Contenedor general del formulario */
 .login-container {
   width: 320px;
-  margin: 60px auto;
+  margin: 20px auto;
   padding: 0;
-  background: #2c3e50;
+  background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   position: relative;
+  border: 1px solid rgba(139, 183, 159, 0.1);
 }
 
-/* Efecto de brillo sutil en el borde */
+/* Efecto de brillo sutil en el borde - colores del logo */
 .login-container::before {
   content: '';
   position: absolute;
@@ -18,7 +19,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c, #f39c12);
+  background: linear-gradient(90deg, #8bb79f, #7fb399, #73a692, #8bb79f);
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
 }
@@ -32,11 +33,12 @@
 .user-icon {
   margin: 25px auto 15px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(139, 183, 159, 0.15);
   border-radius: 14px;
   display: inline-block;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(139, 183, 159, 0.25);
+  text-align: center;
 }
 
 /* Estilos para la imagen del logo */
@@ -46,13 +48,13 @@
   object-fit: cover;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  filter: brightness(1.2) contrast(1.1);
+  filter: brightness(1.1) contrast(1.05);
 }
 
 /* Efecto hover para la imagen */
 .user-icon img:hover {
   transform: scale(1.05) rotate(1deg);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(139, 183, 159, 0.3);
 }
 
 /* Título */
@@ -81,15 +83,15 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(139, 183, 159, 0.08);
   backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(139, 183, 159, 0.15);
 }
 
 /* Etiquetas */
 .login-form label {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(139, 183, 159, 0.95);
   margin-bottom: 8px;
   font-weight: 500;
   text-align: left;
@@ -98,10 +100,10 @@
 /* Inputs */
 .login-form input {
   padding: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(139, 183, 159, 0.2);
   border-radius: 10px;
   font-size: 14px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(139, 183, 159, 0.1);
   color: #ffffff;
   width: 100%;
   box-sizing: border-box;
@@ -111,15 +113,15 @@
 
 /* Placeholder styling */
 .login-form input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(139, 183, 159, 0.5);
 }
 
 /* Foco en los inputs */
 .login-form input:focus {
   outline: none;
-  border-color: #3498db;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+  border-color: #8bb79f;
+  background: rgba(139, 183, 159, 0.18);
+  box-shadow: 0 0 20px rgba(139, 183, 159, 0.4);
   transform: translateY(-2px);
 }
 
@@ -135,10 +137,10 @@
   backdrop-filter: blur(10px);
 }
 
-/* Estilo del botón */
+/* Estilo del botón - usando colores del logo */
 .login-btn {
   padding: 12px 24px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8bb79f 0%, #73a692 100%);
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -149,6 +151,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 8px;
+  box-shadow: 0 4px 15px rgba(139, 183, 159, 0.2);
 }
 
 /* Efecto de brillo en el botón */
@@ -159,14 +162,14 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transition: left 0.5s;
 }
 
 .login-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  background: linear-gradient(135deg, #7fb399 0%, #6d9a85 100%);
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(139, 183, 159, 0.4);
 }
 
 .login-btn:hover:not(:disabled)::before {
@@ -188,7 +191,7 @@
 
 .create-account a {
   font-size: 13px;
-  color: #3498db;
+  color: #8bb79f;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -202,13 +205,13 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: #3498db;
+  background: #8bb79f;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 .create-account a:hover {
-  color: #2980b9;
+  color: #7fb399;
 }
 
 .create-account a:hover::after {
@@ -259,4 +262,19 @@
 
 .login-container {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Variante adicional para el tema CloudFit */
+.cloudfit-theme {
+  background: linear-gradient(135deg, #1a2332 0%, #2c3442 50%, #34495e 100%);
+}
+
+.cloudfit-theme .login-btn {
+  background: linear-gradient(135deg, #8bb79f 0%, #73a692 100%);
+  box-shadow: 0 6px 20px rgba(139, 183, 159, 0.25);
+}
+
+.cloudfit-theme .login-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #9cc4ab 0%, #8bb79f 100%);
+  box-shadow: 0 12px 30px rgba(139, 183, 159, 0.35);
 }

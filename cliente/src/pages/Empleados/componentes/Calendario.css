@@ -1,0 +1,518 @@
+/* Schedule.css - Rediseño completo inspirado en CloudFit Login */
+
+/* Variables inspiradas en el login de CloudFit */
+:root {
+  --cloudfit-green: #7dd3c0;
+  --cloudfit-dark: #2c3e50;
+  --cloudfit-light: #ecf0f1;
+  --cloudfit-white: #ffffff;
+  --cloudfit-gray: #95a5a6;
+  --cloudfit-blue: #3498db;
+  --cloudfit-orange: #f39c12;
+  --cloudfit-red: #e74c3c;
+  --cloudfit-success: #27ae60;
+  
+  /* Gradientes y sombras elegantes */
+  --background-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --card-shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+  --card-shadow-hover: 0 8px 30px rgba(44, 62, 80, 0.12);
+  --border-radius: 16px;
+  --border-radius-small: 12px;
+}
+
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.schedule-container {
+  min-height: calc(100vh - 80px); /* Restar altura del header */
+  background: var(--background-gradient);
+  padding: 20px 16px 32px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--cloudfit-dark);
+}
+
+/* Loading mejorado */
+.loading-schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 24px;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--cloudfit-light);
+  border-top: 4px solid var(--cloudfit-green);
+  border-radius: 50%;
+  animation: elegantSpin 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+@keyframes elegantSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-schedule p {
+  color: var(--cloudfit-gray);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+
+/* Header del schedule */
+.schedule-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.schedule-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--cloudfit-dark);
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+/* Navegador de fechas rediseñado */
+.date-navigator {
+  background: var(--cloudfit-white);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.date-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--cloudfit-green);
+  color: var(--cloudfit-white);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(125, 211, 192, 0.3);
+}
+
+.date-btn:hover {
+  background: #6bc4b2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(125, 211, 192, 0.4);
+}
+
+.date-btn:active {
+  transform: translateY(0);
+}
+
+.current-date {
+  flex: 1;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.date-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cloudfit-dark);
+  text-transform: capitalize;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.today-badge {
+  background: linear-gradient(135deg, var(--cloudfit-green) 0%, #6bc4b2 100%);
+  color: var(--cloudfit-white);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(125, 211, 192, 0.3);
+}
+
+/* Error mejorado */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--cloudfit-white);
+  border: 2px solid #fed7d7;
+  border-radius: var(--border-radius-small);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  color: var(--cloudfit-red);
+  font-weight: 600;
+  box-shadow: var(--card-shadow);
+}
+
+.error-icon {
+  font-size: 24px;
+}
+
+/* Sección de citas rediseñada */
+.appointments-section {
+  margin-bottom: 32px;
+}
+
+.appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 4px;
+}
+
+.appointments-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--cloudfit-dark);
+  letter-spacing: -0.5px;
+}
+
+.appointments-count {
+  background: linear-gradient(135deg, var(--cloudfit-green) 0%, #6bc4b2 100%);
+  color: var(--cloudfit-white);
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(125, 211, 192, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count-number {
+  font-size: 20px;
+}
+
+.count-text {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Sin citas rediseñado */
+.no-appointments {
+  background: var(--cloudfit-white);
+  border-radius: var(--border-radius);
+  padding: 60px 32px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+.no-appointments-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+  filter: grayscale(0.3);
+}
+
+.no-appointments h4 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--cloudfit-dark);
+  letter-spacing: -0.5px;
+}
+
+.no-appointments p {
+  color: var(--cloudfit-gray);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Lista de citas completamente rediseñada */
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.appointment-card {
+  background: var(--cloudfit-white);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.appointment-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--cloudfit-green);
+  transition: width 0.3s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.appointment-card:hover::before {
+  width: 8px;
+}
+
+/* Layout de la card */
+.appointment-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Tiempo elegante */
+.appointment-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, var(--cloudfit-light) 0%, #dfe6e9 100%);
+  padding: 16px 12px;
+  border-radius: var(--border-radius-small);
+  min-width: 80px;
+}
+
+.start-time {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--cloudfit-dark);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.time-separator {
+  color: var(--cloudfit-gray);
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+.end-time {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cloudfit-gray);
+  line-height: 1;
+}
+
+/* Detalles mejorados */
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.client-info,
+.service-info,
+.duration-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.client-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cloudfit-dark);
+  letter-spacing: -0.3px;
+}
+
+.service-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cloudfit-gray);
+}
+
+.duration-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cloudfit-gray);
+}
+
+.client-icon,
+.service-icon,
+.duration-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+/* Estado moderno */
+.appointment-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(125, 211, 192, 0.2);
+}
+
+.status-text {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cloudfit-gray);
+  text-align: center;
+}
+
+/* Resumen elegante */
+.schedule-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.summary-card {
+  background: var(--cloudfit-white);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  border: none;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.summary-icon {
+  font-size: 40px;
+  opacity: 0.9;
+}
+
+.summary-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.summary-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cloudfit-gray);
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--cloudfit-dark);
+  letter-spacing: -0.5px;
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+  .schedule-container {
+    padding: 16px 12px 24px;
+  }
+  
+  .schedule-title {
+    font-size: 28px;
+  }
+  
+  .date-navigator {
+    padding: 16px;
+  }
+  
+  .appointment-card {
+    padding: 20px;
+    gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+  }
+  
+  .appointment-time {
+    justify-self: center;
+  }
+  
+  .appointment-status {
+    justify-self: center;
+  }
+}
+
+/* Responsive para tablets */
+@media (min-width: 768px) {
+  .schedule-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 24px;
+  }
+  
+  .schedule-title {
+    font-size: 36px;
+  }
+  
+  .appointments-list {
+    gap: 20px;
+  }
+  
+  .schedule-summary {
+    gap: 20px;
+  }
+}
+
+/* Agregar estos estilos a tu Calendario.css existente */
+
+/* Botón deshabilitado */
+.date-btn.disabled,
+.date-btn:disabled {
+  background: #bdc3c7 !important;
+  color: #7f8c8d !important;
+  cursor: not-allowed !important;
+  opacity: 0.5;
+  box-shadow: none !important;
+}
+
+.date-btn.disabled:hover,
+.date-btn:disabled:hover {
+  background: #bdc3c7 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Resumen con una sola tarjeta centrada */
+.schedule-summary {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}

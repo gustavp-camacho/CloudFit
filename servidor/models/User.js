@@ -7,7 +7,14 @@ const userSchema = new mongoose.Schema({
     unique: true,
     trim: true,
     minlength: 3,
-    maxlength: 50
+    maxlength: 50,
+    // Regex más permisivo para usuarios existentes
+    validate: {
+      validator: function(v) {
+        return /^[a-zA-Z0-9._\s-]{3,50}$/.test(v);
+      },
+      message: 'Username debe contener solo letras, números, guiones bajos, guiones o puntos'
+    }
   },
   email: {
     type: String,
@@ -15,7 +22,7 @@ const userSchema = new mongoose.Schema({
     unique: true,
     trim: true,
     lowercase: true,
-    match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Email inválido']
+    match: [/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Email inválido']
   },
   password: {
     type: String,
@@ -24,15 +31,12 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['admin', 'user', 'instructor'],
+    enum: ['admin', 'user', 'empleado'],
     default: 'user'
   }
-});
-
-// Middleware para actualizar updatedAt antes de guardar
-userSchema.pre('save', function(next) {
-  this.updatedAt = Date.now();
-  next();
+}, {
+  timestamps: false, // No agregar createdAt/updatedAt automáticamente
+  versionKey: '__v'  // Mantener __v (debe ser string, no boolean)
 });
 
 // Método para ocultar la contraseña en las respuestas JSON
